@@ -10,6 +10,7 @@ use OpenTelemetry\SDK\Trace\TracerProvider;
 
 $transport = PsrTransportFactory::discover()->create('http://zipkin:9411/api/v2/spans', 'application/json');
 $zipkinExporter = new ZipkinExporter(
+    'Zipkin Example',
     $transport
 );
 $tracerProvider =  new TracerProvider(
